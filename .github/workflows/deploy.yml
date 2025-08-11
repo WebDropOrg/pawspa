@@ -25,10 +25,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # Uncomment the next line if your repo is not <user>.github.io
-          # cname: your-custom-domain.com
-          # baseurl: /pawspa
+          force_orphan: true
